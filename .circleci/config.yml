@@ -1,0 +1,154 @@
+# YAML Anchors
+# These anchors can be aliased to prevent config repetition
+# For more info see:
+# https://medium.com/@kinghuang/docker-compose-anchors-aliases-extensions-a1e4105d70bd
+
+docker_image: &docker_image
+  docker:
+    - image: circleci/node:12.9.0
+
+# Caching, for more info see:
+# https://circleci.com/docs/2.0/caching/#section=projects
+#
+# Note that the CircleCI cache is immutable and there's not other way to
+# invalidate the cache besides using a different key. Therefore it's advised to
+# use some sort of version pre- or postfix in the.
+#
+# For more info see:
+# https://circleci.com/docs/2.0/caching/#clearing-cache
+restore_deps_cache: &restore_deps_cache
+  restore_cache:
+    keys:
+      - npm-cache-v1-{{ checksum "package-lock.json" }}
+
+restore_build_cache: &restore_build_cache
+  restore_cache:
+    keys:
+      - build-cache-v1-{{ .Revision }}
+
+# Store reports in sub dirs, for more info see:
+# https://circleci.com/docs/2.0/configuration-reference/#store_test_results
+store_build_artifacts: &store_build_artifacts
+  store_artifacts:
+    path: build
+
+# Job filters, for more info see:
+# https://circleci.com/docs/2.0/workflows/#branch-level-job-execution
+all_branches_except_master: &all_branches_except_master
+  filters:
+    branches:
+      ignore: master
+
+only_master: &only_master
+  filters:
+    branches:
+      only: master
+
+version: 2.1
+jobs:
+  # Uncomment (also add to "workflows"!) when this issue is fixed:
+  # https://github.com/upstandfm/website/issues/3
+  #
+  # audit:
+  #   <<: *docker_image
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Audit dependencies
+  #         command: npm audit
+
+  deps:
+    <<: *docker_image
+    steps:
+      - checkout
+      - *restore_deps_cache
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - save_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+
+          # "node_modules" should not be cached, because they contain compiled
+          # binaries, which will cause errors when using different Node versions
+          #
+          # The ".npm" dir also stores deps, but uncompiled.
+          #
+          # Additionally, some binaries/executables are stord in ".cache" (like
+          # "cypres").
+          #
+          # For more info see:
+          # https://docs.cypress.io/guides/guides/continuous-integration.html#Caching
+          paths:
+            - ~/.npm
+            - ~/.cache
+
+  build:
+    <<: *docker_image
+    steps:
+      - checkout
+      - *restore_deps_cache
+      - *restore_build_cache
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Build website
+          command: npm run build
+      - save_cache:
+          key: build-cache-v1-{{ .Revision }}
+          paths:
+            - ./build
+      - *store_build_artifacts
+
+  release:
+    <<: *docker_image
+    steps:
+      - checkout
+      - *restore_deps_cache
+      - *restore_build_cache
+      - run:
+          name: Install dependencies
+          command: npm ci
+
+      # This exposes: $DEPLOY_MESSAGE
+      # See: https://discuss.circleci.com/t/using-environment-variables-in-config-yml-not-working/14237
+      - run: echo 'export DEPLOY_MESSAGE="Deployed from CircleCI. See $CIRCLE_BUILD_URL"' >> $BASH_ENV
+      - run:
+          name: Release website to prod
+          command: |
+            $(npm bin)/netlify deploy --prod --message="$DEPLOY_MESSAGE" --site="$NETLIFY_SITE_ID" --dir="$NETLIFY_PUBLISH_DIR" --auth="$NETLIFY_ACCESS_TOKEN"
+
+workflows:
+  build_branch:
+    jobs:
+      # - audit:
+      #     <<: *all_branches_except_master
+      - deps:
+          <<: *all_branches_except_master
+          # requires:
+          #   - audit
+      - build:
+          <<: *all_branches_except_master
+          requires:
+            # - audit
+            - deps
+
+  release_master:
+    jobs:
+      # - audit:
+      #     <<: *only_master
+      - deps:
+          <<: *only_master
+          # requires:
+          #   - audit
+      - build:
+          <<: *only_master
+          requires:
+            # - audit
+            - deps
+      - release:
+          <<: *only_master
+          requires:
+            # - audit
+            - deps
+            - build
