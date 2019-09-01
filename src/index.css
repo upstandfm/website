@@ -1,4 +1,23 @@
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Fira Sans Regular'), local('FiraSans-Regular'),
+    url('./fonts/fira-sans-v10-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Fira Sans Bold'), local('FiraSans-Bold'),
+    url('./fonts/fira-sans-v10-latin-700.woff2') format('woff2');
+}
+
 :root {
+  --color-purple: #341952;
   --color-coral: #e96d77;
 }
 
@@ -15,6 +34,9 @@ body {
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--color-purple);
+  padding: 1em;
 }
 
 a,

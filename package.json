@@ -9,7 +9,7 @@
     "build": "parcel build src/index.html --out-dir build"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css,md,html,svg}": [
+    "src/**/*.{js,jsx,json,css,md,html}": [
       "prettier --single-quote --write",
       "git add"
     ]
