@@ -1,0 +1,40 @@
+{
+  "name": "website",
+  "description": "Upstand FM landing page.",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rimraf .cache dev && parcel src/index.html --out-dir dev",
+    "build": "parcel build src/index.html --out-dir build"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css,md,html,svg}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upstandfm/website.git"
+  },
+  "author": "Daniël Illouz <daniel.illouz@me.com> (https://www.danillouz.dev/)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/upstandfm/website/issues"
+  },
+  "homepage": "https://www.upstand.fm",
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.5",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0"
+  }
+}

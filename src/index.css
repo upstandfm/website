@@ -1,0 +1,41 @@
+:root {
+  --color-coral: #e96d77;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+a:visited {
+  color: var(--color-coral);
+  font-weight: bold;
+}
+
+p {
+  line-height: 28px;
+}
+
+ul,
+ol {
+  padding: 0 0 0 2.5em;
+}
+
+li {
+  line-height: 1.8;
+}
+
+:focus {
+  outline: 3px solid lightskyblue;
+}
