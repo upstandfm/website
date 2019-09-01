@@ -40,7 +40,9 @@ Code is automatically formatted on commit with [Prettier](https://prettier.io/).
 
 - Audit npm dependencies for security vulnerabilities.
 - Build the website.
-- Deploy the website via [Netlify](https://app.netlify.com)
+- Deploy the website via [Netlify](https://app.netlify.com):
+  - Preview the website when pushing a `branch`.
+  - Release to prod when pushing to `master`.
 
 ### Netlify
 

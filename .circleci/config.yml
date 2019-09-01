@@ -7,7 +7,8 @@ docker_image: &docker_image
   docker:
     - image: circleci/node:12.9.0
 
-# Caching, for more info see:
+# Caching
+# For more info see:
 # https://circleci.com/docs/2.0/caching/#section=projects
 #
 # Note that the CircleCI cache is immutable and there's not other way to
@@ -100,6 +101,24 @@ jobs:
             - ./build
       - *store_build_artifacts
 
+  preview:
+    <<: *docker_image
+    steps:
+      - checkout
+      - *restore_deps_cache
+      - *restore_build_cache
+      - run:
+          name: Install dependencies
+          command: npm ci
+
+      # This exposes: $DEPLOY_MESSAGE
+      # See: https://discuss.circleci.com/t/using-environment-variables-in-config-yml-not-working/14237
+      - run: echo 'export DEPLOY_MESSAGE="Deployed from CircleCI. See $CIRCLE_BUILD_URL"' >> $BASH_ENV
+      - run:
+          name: Draft deploy to preview website
+          command: |
+            $(npm bin)/netlify deploy --message="$DEPLOY_MESSAGE" --site="$NETLIFY_SITE_ID" --dir="$NETLIFY_PUBLISH_DIR" --auth="$NETLIFY_ACCESS_TOKEN"
+
   release:
     <<: *docker_image
     steps:
@@ -132,6 +151,12 @@ workflows:
           requires:
             # - audit
             - deps
+      - preview:
+          <<: *all_branches_except_master
+          requires:
+            # - audit
+            - deps
+            - build
 
   release_master:
     jobs:
