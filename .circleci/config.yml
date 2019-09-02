@@ -94,7 +94,7 @@ jobs:
           paths:
             - ./build
       - store_artifacts:
-        path: build
+          path: build
 
   preview:
     <<: *docker_image
