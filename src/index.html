@@ -47,6 +47,222 @@
   </head>
 
   <body>
-    <img src="./svg/logo-with-name.svg" alt="upstand fm logo with name" />
+    <header class="header">
+      <img
+        class="logo-with-name"
+        src="./svg/logo-with-name.svg"
+        alt="logo with name upstand fm"
+      />
+    </header>
+
+    <main>
+      <section>
+        <h1>Async standups for remote teams.</h1>
+        <button>Get Started</button>
+      </section>
+
+      <section>
+        <h2>Hi there!</h2>
+
+        <p>
+          I&apos;m building Upstand FM because I want to explore if there&apos;s
+          a better way to do standups when working remotely.
+        </p>
+
+        <p>
+          Signups are <b>disabled</b> at the moment, because I just started
+          working on this and the app is not usable yet. But if you&apos;d like
+          access, learn more, or just say hello, send me (Daniël) an email to{'
+          '}
+          <a href="mailto:hi@upstand.fm?subject=Hi there!">hi@upstand.fm</a>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>What does "async" mean?</h2>
+
+        <p>
+          Async is short for asynchronous. And in this context it refers to
+          "how" we communicate within the team.
+        </p>
+
+        <p>
+          In contrast, synchronous communication usually refers to a
+          "face-to-face" exchange of information. Like having a meeting with
+          people that are all present in the same room, or doing a conference
+          call.
+          <br />
+          Everyone is (supposed to be) actively listening while the meeting
+          takes place. And when someone asks you a question, you&apos;ll
+          (usually) respond immediately, as part of the conversation.
+        </p>
+
+        <p>
+          Asynchronous communication usually refers to an exchange of
+          information that happens over time. Like sending and receiving emails,
+          or chat messages.
+          <br />
+          Here, a response doesn&apos;t have to (nor is expected to!) be
+          immediate.
+        </p>
+
+        <h2>What&apos;s a standup?</h2>
+
+        <p>
+          It&apos;s a common ritual among agile/scrum teams. Usually every day
+          all team members will gather in person, and each person will answer 3
+          questions:
+        </p>
+
+        <ol>
+          <li>What did you work on yesterday?</li>
+          <li>What will you work on today?</li>
+          <li>Do you have any impediments?</li>
+        </ol>
+
+        <p>
+          After each team member answers these questions&mdash;usually referred
+          to as "the update"&mdash;work will resume (in theory{' '}
+          <span
+            role="img"
+            aria-label="grinning face with aquinting eyes and sweat drop"
+          >
+            😅
+          </span>
+          ).
+        </p>
+
+        <h2>Why are standups useful?</h2>
+
+        <p>
+          When executed correctly, standups make the team aware of what everyone
+          is working on, and what they might be struggling with.
+        </p>
+
+        <p>
+          In general, standups improve the flow of information. They help
+          participants with getting a deeper understanding of the problem space
+          they are working in. They also stimulate everyone to help each other,
+          and share/synchronize their understanding of shared goals.
+        </p>
+
+        <h2>What&apos;s the problem then?</h2>
+
+        <p>
+          Well, a fixed time must be picked for the entire team to be available.
+          This is especially difficult for distributed teams that work remotely
+          (usually due to timezone differences).
+        </p>
+
+        <p>
+          Additionally, the actual time the standup takes place can interfere
+          with people&apos;s schedule, and disrupt someone&apos;s
+          workflow&mdash;due to context switching and "deep work" interference.
+          This problem tends to be more prominent in a remote working
+          environment, where people have different rhythms (because of personal
+          preference and/or timezone difference).
+        </p>
+
+        <p>Other issues are:</p>
+
+        <ul>
+          <li>Discussions during the standup are common (sidebar!).</li>
+
+          <li>
+            Participants can "zone out", get distracted or loose interest.
+          </li>
+
+          <li>There&apos;s no efficient way to "replay" the standup.</li>
+
+          <li>There&apos;s usually no record of previous standups.</li>
+        </ul>
+
+        <p>
+          What if team members could easily share- and listen to daily standup
+          updates, when it&apos;s most convenient for them?
+        </p>
+
+        <h2>How?</h2>
+
+        <p>Stay <b>tuned</b> for updates!</p>
+      </section>
+
+      <section>
+        <h2>Ready to try Upstand FM?</h2>
+
+        <button>Get Started</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="brand">
+          <img class="logo" src="./svg/logo.svg" alt="logo" />
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="mailto:hi@upstand.fm?subject=Hi there!"
+            >
+              Say hi!
+            </a>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://danillouz.dev"
+            >
+              About
+            </a>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://blog.danillouz.dev"
+            >
+              Blog
+            </a>
+          </div>
+
+          <div class="column">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/upstandfm"
+            >
+              GitHub
+            </a>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://storybook.upstand.fm"
+            >
+              Storybook
+            </a>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/danillouz"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
+
+        <div class="copyright">&copy; <span id="year"></span> Upstand FM</div>
+      </div>
+    </footer>
+
+    <script>
+      var el = document.getElementById('year');
+      var year = new Date().getFullYear();
+      el.textContent = year;
+    </script>
   </body>
 </html>
