@@ -34,9 +34,6 @@ body {
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-color: var(--color-purple);
-  padding: 1em;
 }
 
 a,
