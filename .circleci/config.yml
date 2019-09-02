@@ -27,12 +27,6 @@ restore_build_cache: &restore_build_cache
     keys:
       - build-cache-v1-{{ .Revision }}
 
-# Store reports in sub dirs, for more info see:
-# https://circleci.com/docs/2.0/configuration-reference/#store_test_results
-store_build_artifacts: &store_build_artifacts
-  store_artifacts:
-    path: build
-
 # Job filters, for more info see:
 # https://circleci.com/docs/2.0/workflows/#branch-level-job-execution
 all_branches_except_master: &all_branches_except_master
@@ -99,7 +93,8 @@ jobs:
           key: build-cache-v1-{{ .Revision }}
           paths:
             - ./build
-      - *store_build_artifacts
+      - store_artifacts:
+        path: build
 
   preview:
     <<: *docker_image
