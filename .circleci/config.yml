@@ -5,7 +5,19 @@
 
 docker_image: &docker_image
   docker:
-    - image: circleci/node:12.9.0
+    - image: circleci/node:12.9.1
+
+docker_cy_image: &docker_cy_image
+  docker:
+    - image: cypress/base:10
+      environment:
+        # Enables colors in the output
+        TERM: xterm
+
+        # Used to store junit test reports
+        # For more info see:
+        # https://github.com/cypress-io/cypress-example-docker-circle#generate-just-xml-report
+        MOCHA_FILE: reports/cypress/test-report-junit.xml
 
 # Caching
 # For more info see:
@@ -77,6 +89,72 @@ jobs:
             - ~/.npm
             - ~/.cache
 
+  e2e:
+    <<: *docker_cy_image
+    steps:
+      - checkout
+      - *restore_deps_cache
+      - run:
+          name: Install dependencies
+          command: npm ci
+
+      # Verify that Cypress is installed correctly and is executable
+      - run:
+          name: Verify Cypress installation
+          command: |
+            $(npm bin)/cypress verify
+
+      # Cypress requires a local server to be running, to be able to run tests
+      - run:
+          name: Start dev server
+          command: npm start
+          # CircleCI will kill the server when tests have run
+          background: true
+      - run:
+          name: Run integration/end-to-end tests
+          command: |
+            $(npm bin)/cypress run --record false --reporter junit --reporter-options "mochaFile=$MOCHA_FILE"
+
+      # CircleCI does not support multiple artifact paths, so they must be
+      # stored as separate steps
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+
+  e2e-record:
+    <<: *docker_cy_image
+    steps:
+      - checkout
+      - *restore_deps_cache
+      - run:
+          name: Install dependencies
+          command: npm ci
+
+      # Verify that Cypress is installed correctly and is executable
+      - run:
+          name: Verify Cypress installation
+          command: |
+            $(npm bin)/cypress verify
+
+      # Cypress requires a local server to be running, to be able to run tests
+      - run:
+          name: Start dev server
+          command: npm start
+          # CircleCI will kill the server when tests have run
+          background: true
+      - run:
+          name: Run integration/end-to-end tests, and record
+          command: |
+            $(npm bin)/cypress run --group "All tests" --record --key "$CYPRESS_RECORD_KEY" --reporter junit --reporter-options "mochaFile=$MOCHA_FILE"
+
+      # CircleCI does not support multiple artifact paths, so they must be
+      # stored as separate steps
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+
   build:
     <<: *docker_image
     steps:
@@ -141,16 +219,22 @@ workflows:
           <<: *all_branches_except_master
           # requires:
           #   - audit
+      - e2e:
+          requires:
+            # - audit
+            - deps
       - build:
           <<: *all_branches_except_master
           requires:
             # - audit
             - deps
+            - e2e
       - preview:
           <<: *all_branches_except_master
           requires:
             # - audit
             - deps
+            - e2e
             - build
 
   release_master:
@@ -161,14 +245,20 @@ workflows:
           <<: *only_master
           # requires:
           #   - audit
+      - e2e-record:
+          requires:
+            # - audit
+            - deps
       - build:
           <<: *only_master
           requires:
             # - audit
             - deps
+            - e2e-record
       - release:
           <<: *only_master
           requires:
             # - audit
             - deps
+            - e2e-record
             - build

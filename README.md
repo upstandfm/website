@@ -7,6 +7,7 @@
 Upstand FM landing page.
 
 - [Parcel bundler](#parcel-bundler)
+- [Tests](#tests)
 - [CI/CD](#cicd)
 
 ## Parcel bundler
@@ -34,23 +35,49 @@ It correctly bundles and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.
 
+#### `npm run cy`
+
+Runs end-to-end tests locally using [Cypress](https://www.cypress.io/).
+
+Caveats:
+
+- The local dev server must be running (use `npm start`), before the end-to-end tests can run.
+- The [watch-and-reload plugin](https://github.com/bahmutov/cypress-watch-and-reload) is used to rerun tests on source code change. But according to [this issue](https://github.com/cypress-io/cypress/issues/456), this functionality will be native in the future. When that's the case, remove the plugin.
+
 ### Code formatting
 
 Code is automatically formatted on commit with [Prettier](https://prettier.io/).
+
+## Tests
+
+### Integration & end-to-end
+
+[Cypress](https://www.cypress.io) is used to run integration- & end-to-end tests, and records them.
+
+The recorded test runs can be viewed [here](https://dashboard.cypress.io/#/projects/t4cjnq/runs). The logs are public, but you need a Cypress account view them.. 🤣
+
+Test files can be found in `/cypress/integration`.
 
 ## CI/CD
 
 [CircleCI](https://circleci.com/gh/organizations/upstandfm) is used to:
 
 - Audit npm dependencies for security vulnerabilities.
+- Run integration/end-to-end tests (Cypress).
 - Build the website.
 - Deploy the website via [Netlify](https://app.netlify.com):
   - Preview the website when pushing a `branch`.
   - Release to prod when pushing to `master`.
 
+### Testing
+
+CircleCI requires a Cypress token to record tests and store screenshots.
+
+The token can be found in the [Cypress dashboard](https://dashboard.cypress.io/#/projects/t4cjnq/settings) under "Record Keys". It is configured in CircleCI as an [environment variable](https://circleci.com/gh/upstandfm/website/edit#env-vars) named `CYPRESS_RECORD_KEY`, and used in the `.circleci/config.yml` file.
+
 ### Netlify
 
-CircleCI requires a Netlify access token, site ID and publish directory to deploy the built files (Storybook + app). These are configured as [environment variables](https://circleci.com/gh/upstandfm/app/edit#env-vars):
+CircleCI requires a Netlify access token, site ID and publish directory to deploy the built files. These are configured as [environment variables](https://circleci.com/gh/upstandfm/website/edit#env-vars):
 
 #### Token
 
