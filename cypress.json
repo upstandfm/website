@@ -1,0 +1,7 @@
+{
+  "projectId": "t4cjnq",
+  "baseUrl": "http://localhost:1234",
+  "cypress-watch-and-reload": {
+    "watch": "src"
+  }
+}

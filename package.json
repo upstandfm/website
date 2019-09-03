@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "rimraf .cache dev && parcel src/index.html --out-dir dev",
-    "build": "parcel build src/index.html --out-dir build"
+    "build": "parcel build src/index.html --out-dir build",
+    "cy": "cypress open"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,md,html}": [
@@ -31,6 +32,10 @@
   "homepage": "https://www.upstand.fm",
   "dependencies": {},
   "devDependencies": {
+    "cypress": "^3.4.1",
+    "cypress-watch-and-reload": "^1.2.11",
+    "eslint": "^6.3.0",
+    "eslint-plugin-cypress": "^2.6.1",
     "husky": "^3.0.4",
     "lint-staged": "^9.2.5",
     "netlify-cli": "^2.13.0",
