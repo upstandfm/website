@@ -1,5 +1,9 @@
 # Website
 
+[![CircleCI](https://circleci.com/gh/upstandfm/website.svg?style=svg)](https://circleci.com/gh/upstandfm/website)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/621e0425-89e1-4168-9168-0341e0f4da45/deploy-status)](https://app.netlify.com/sites/upstand-fm-website/deploys)
+
 Upstand FM landing page.
 
 - [Parcel bundler](#parcel-bundler)
