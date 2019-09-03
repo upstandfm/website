@@ -30,6 +30,15 @@ describe('Landing page', () => {
       .should('have.attr', 'href', 'mailto:hi@upstand.fm?subject=Early access');
   });
 
+  it('border SVGs have class "comment", to hide in safari reader view', () => {
+    cy.get('[data-cy="border-subtle"]').should('have.attr', 'class', 'comment');
+    cy.get('[data-cy="border-curve-right"]').should(
+      'have.attr',
+      'class',
+      'comment'
+    );
+  });
+
   it('shows footer with logo, links and copyright', () => {
     cy.get('[data-cy="logo"]').should('exist');
 

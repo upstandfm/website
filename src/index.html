@@ -86,7 +86,17 @@
 
       <section class="secondary">
         <div class="border-wave-subtle">
-          <img src="./svg/border-subtle-wave.svg" alt="subtle wave border" />
+          <!--
+            The class name "comment" prevents Safari reader view to show the image
+
+            It's NOT used for styling.
+          -->
+          <img
+            data-cy="border-subtle"
+            class="comment"
+            src="./svg/border-subtle-wave.svg"
+            alt="subtle wave border"
+          />
         </div>
 
         <div class="wrapper">
@@ -207,8 +217,15 @@
       </section>
 
       <section class="secondary">
+        <!--
+            The class name "comment" prevents Safari reader view to show the image
+
+            It's NOT used for styling.
+          -->
         <div class="border-wave-curve-right">
           <img
+            data-cy="border-curve-right"
+            class="comment"
             src="./svg/border-curve-right.svg"
             alt="curve right wave border"
           />
