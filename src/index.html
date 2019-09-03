@@ -50,12 +50,14 @@
   <body>
     <header id="header">
       <img
+        data-cy="logo-with-name"
         class="logo-with-name"
         src="./svg/logo-with-name.svg"
         alt="logo with name upstand fm"
       />
 
       <a
+        data-cy="login"
         class="login"
         target="_blank"
         rel="noopener noreferrer"
@@ -68,9 +70,15 @@
     <main>
       <section id="hero">
         <div class="center">
-          <h1 id="tagline">Async standups for remote teams</h1>
+          <h1 data-cy="tagline" id="tagline">
+            Async standups for remote teams
+          </h1>
 
-          <a class="button" href="mailto:hi@upstand.fm?subject=Early access">
+          <a
+            data-cy="cta-1"
+            class="button"
+            href="mailto:hi@upstand.fm?subject=Early access"
+          >
             Get Access
           </a>
         </div>
@@ -210,6 +218,7 @@
           <h2 class="cta-title">Ready to try Upstand FM?</h2>
 
           <a
+            data-cy="cta-2"
             class="button vertical-space"
             href="mailto:hi@upstand.fm?subject=Early access"
           >
@@ -222,12 +231,13 @@
     <footer id="footer" class="secondary">
       <div class="wrapper">
         <div class="brand">
-          <img class="logo" src="./svg/logo.svg" alt="logo" />
+          <img data-cy="logo" class="logo" src="./svg/logo.svg" alt="logo" />
         </div>
 
         <div class="columns">
           <div class="column">
             <a
+              data-cy="say-hi"
               target="_blank"
               rel="noopener noreferrer"
               href="mailto:hi@upstand.fm?subject=Hi there!"
@@ -236,6 +246,7 @@
             </a>
 
             <a
+              data-cy="about"
               target="_blank"
               rel="noopener noreferrer"
               href="https://danillouz.dev"
@@ -244,6 +255,7 @@
             </a>
 
             <a
+              data-cy="blog"
               target="_blank"
               rel="noopener noreferrer"
               href="https://blog.danillouz.dev"
@@ -254,6 +266,7 @@
 
           <div class="column">
             <a
+              data-cy="github"
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/upstandfm"
@@ -262,6 +275,7 @@
             </a>
 
             <a
+              data-cy="storybook"
               target="_blank"
               rel="noopener noreferrer"
               href="https://storybook.upstand.fm"
@@ -270,6 +284,7 @@
             </a>
 
             <a
+              data-cy="twitter"
               target="_blank"
               rel="noopener noreferrer"
               href="https://twitter.com/danillouz"
@@ -279,7 +294,9 @@
           </div>
         </div>
 
-        <div class="copyright">&copy; <span id="year"></span> Upstand FM</div>
+        <div data-cy="copyright" class="copyright">
+          &copy; <span id="year"></span> Upstand FM
+        </div>
       </div>
     </footer>
 
