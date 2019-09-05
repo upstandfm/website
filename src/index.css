@@ -21,12 +21,14 @@
   --color-purple: #422b77;
 
   /* Harmonious grays */
-  --color-darkgrey: #353140;
-  --color-grey: #716d7b;
-  --color-lightgrey: #f9f8f9;
+  --color-darkest-grey: #353140;
+  --color-dark-grey: #403b4d;
+  --color-grey: #746d86;
+  --color-light-grey: #d3d1d9;
+  --color-lighter-grey: #edebf2;
+  --color-lightest-grey: #fbf8ff;
 
   /* White tones */
-  --color-dirty-white: #f8f5fd;
   --color-white: #ffffff;
 
   /* Accent */
@@ -49,7 +51,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-purple);
-  color: var(--color-darkgrey);
+  color: var(--color-darkest-grey);
 }
 
 a,
@@ -65,6 +67,7 @@ a:hover {
 
 p {
   line-height: 28px;
+  color: var(--color-dark-grey);
 }
 
 ul,
@@ -95,7 +98,7 @@ li {
 
 .secondary {
   position: relative;
-  background-color: var(--color-dirty-white);
+  background-color: var(--color-lightest-grey);
 }
 
 .logo {
@@ -226,7 +229,7 @@ section {
 
 #footer {
   padding: 4em 0;
-  border-top: 2px solid #f1ebff;
+  border-top: 2px solid var(--color-lighter-grey);
   color: var(--color-grey);
 }
 
