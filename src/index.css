@@ -18,17 +18,21 @@
 
 :root {
   /* Primary */
-  --color-purple: #422b77;
+  --color-darkest-purple: #191238;
+  --color-darker-purple: #2e235d;
+  --color-dark-purple: #4a308d;
+  --color-purple: #5e3da8;
+  --color-light-purple: #8052dc;
+  --color-lighter-purple: #c2aaf9;
+  --color-lightest-purple: #ede6fb;
 
-  /* Harmonious grays */
+  /* Neutral */
   --color-darkest-grey: #353140;
   --color-dark-grey: #403b4d;
   --color-grey: #746d86;
   --color-light-grey: #d3d1d9;
   --color-lighter-grey: #edebf2;
   --color-lightest-grey: #fbf8ff;
-
-  /* White tones */
   --color-white: #ffffff;
 
   /* Accent */
