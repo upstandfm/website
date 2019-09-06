@@ -36,8 +36,9 @@
   --color-white: #ffffff;
 
   /* Accent */
+  --color-dark-coral: #dd5f6e;
   --color-coral: #e96d77;
-  --color-light-coral: #f7747f;
+  --color-light-coral: #fb7982;
   --color-mint: #30e8b6;
 }
 
@@ -113,23 +114,55 @@ li {
 .button,
 .button:active,
 .button:visited {
+  font-size: 21px;
   text-decoration: none;
   text-transform: none;
-  text-shadow: 0 1px 2px rgba(105, 49, 54, 0.4);
   letter-spacing: 1px;
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  padding: 14px 28px;
-  color: var(--color-white);
-  background-color: var(--color-coral);
+  padding: 12px 28px;
+  border: 2px solid;
   border-radius: 33px;
   transition: background-color 0.2s ease;
 }
 
 .button:hover {
   cursor: pointer;
+}
+
+.button.primary {
+  background-color: var(--color-coral);
+  color: var(--color-white);
+  border-color: var(--color-coral);
+  text-shadow: 0 1px 2px rgba(105, 49, 54, 0.4);
+}
+
+.button.primary:hover {
   background-color: var(--color-light-coral);
+  border-color: var(--color-light-coral);
+}
+
+.button.primary:active {
+  background-color: var(--color-dark-coral);
+  border-color: var(--color-dark-coral);
+}
+
+.button.secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.button.secondary:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-dark-grey);
+}
+
+.button.secondary:active {
+  background-color: var(--color-light-grey);
+  border-color: var(--color-light-grey);
 }
 
 .button.vertical-space {
@@ -147,18 +180,17 @@ li {
   border-top: 5px solid var(--color-coral);
 }
 
+#header .button {
+  font-size: 17px;
+}
+
 .logo-with-name {
   width: 160px;
   display: block;
 }
 
-.login,
-.login:active,
-.login:visited {
+.login {
   justify-self: end;
-  color: var(--color-white);
-  font-weight: normal;
-  letter-spacing: 1px;
 }
 
 /* Hero */
