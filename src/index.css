@@ -51,8 +51,9 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 17px;
+  line-height: 1.5;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 19px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-darkest-grey);
@@ -70,7 +71,6 @@ a:hover {
 }
 
 p {
-  line-height: 1.5;
   color: var(--color-dark-grey);
 }
 
@@ -87,49 +87,55 @@ li {
   outline: 3px solid var(--color-mint) !important;
 }
 
-/* Misc */
-
-.wrapper {
-  max-width: 60rem;
-  margin: 0 auto;
-}
-
-.center {
-  margin: auto;
-  text-align: center;
-  padding: 1em 0;
-}
-
-.secondary {
-  position: relative;
-  background-color: var(--color-lightest-grey);
-}
-
-.logo {
-  width: 40px;
-}
-
 /* Buttons */
 
 .button,
 .button:active,
 .button:visited {
-  font-size: 21px;
+  font-size: 17px;
+  line-height: 1.23543;
+  white-space: nowrap;
   text-decoration: none;
   text-transform: none;
   letter-spacing: 1px;
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  padding: 10px 28px;
+  padding: 8px 56px;
   border: 2px solid;
   border-radius: 33px;
-  line-height: 1.5;
+  position: relative;
+  z-index: 1;
   transition: background-color 0.2s ease;
+}
+
+@media (max-width: 1060px) {
+  .button {
+    padding: 8px 46px;
+  }
+}
+
+@media (max-width: 550px) {
+  .button {
+    padding: 8px 36px;
+  }
+}
+
+@media (max-width: 300px) {
+  .button {
+    padding: 8px 26px;
+  }
 }
 
 .button:hover {
   cursor: pointer;
+}
+
+.button.small {
+  font-size: 13px;
+  line-height: 1.30775;
+  padding: 8px 20px;
+  border-radius: 4px;
 }
 
 .button.primary {
@@ -166,26 +172,28 @@ li {
 }
 
 .button.vertical-space {
-  margin: 2em 0;
+  margin: 1em 0;
 }
 
 /* Header */
 
 #header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 1em;
+  padding: 16px;
   background-color: var(--color-dark-purple);
-  border-top: 5px solid var(--color-coral);
 }
 
-#header .button {
-  font-size: 17px;
+#header nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  align-items: center;
+  max-width: 75rem;
+  height: 40px;
+  margin: 0 auto;
 }
 
 .logo-with-name {
-  width: 160px;
+  width: 140px;
   display: block;
 }
 
@@ -193,53 +201,89 @@ li {
   justify-self: end;
 }
 
+@media (max-width: 300px) {
+  #header nav {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+  }
+
+  #header .login {
+    justify-self: center;
+  }
+}
+
 /* Hero */
 
 #hero {
   display: grid;
-  min-height: 58vh;
-  background-color: var(--color-purple);
+  min-height: 60vh;
+  background: linear-gradient(0deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
 }
 
-#hero h1 {
+.hero-wrapper {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.tagline {
+  margin: 1em 0 0.5em 0;
+  padding: 0;
   color: var(--color-white);
   letter-spacing: 1px;
-  line-height: 1.125;
+  font-size: 64px;
+  line-height: 1.05;
 }
 
-#tagline {
-  margin: 1em 0;
-  padding: 0;
-  font-size: 46px;
+@media (max-width: 1060px) {
+  .tagline {
+    font-size: 54px;
+  }
 }
 
 @media (max-width: 550px) {
-  #tagline {
-    font-size: 36px;
+  .tagline {
+    font-size: 34px;
   }
 }
 
 /* Main content */
 
-section {
+.wrapper {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.content {
   padding: 1em;
   background-color: var(--color-white);
 }
 
 .content-header {
-  margin: 2em 0 1em 0;
+  margin: 1.5em 0 0 0;
   text-transform: uppercase;
-  font-size: 1.05em;
+  font-size: 24px;
+  line-height: 1.33349;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.secondary {
+  position: relative;
+  background-color: var(--color-lightest-grey);
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+  padding: 1em 0;
 }
 
 .cta-title {
   margin: 1em 0 0 0;
   font-size: 2em;
-  line-height: 1.25;
-  letter-spacing: 1px;
   font-weight: normal;
+  text-transform: none;
 }
 
 /* Content Borders */
@@ -248,8 +292,9 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(-65%);
+  transform: translateY(-61%);
   width: 100%;
+  z-index: 0;
 }
 
 .border-wave-curve-right {
@@ -258,6 +303,7 @@ section {
   left: 0;
   transform: translateY(-80%);
   width: 100%;
+  z-index: 0;
 }
 
 .border-wave-subtle img,
@@ -279,6 +325,10 @@ section {
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
+}
+
+#footer .logo {
+  width: 40px;
 }
 
 #footer .columns {
