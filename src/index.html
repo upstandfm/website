@@ -49,29 +49,32 @@
 
   <body>
     <header id="header">
-      <img
-        data-cy="logo-with-name"
-        class="logo-with-name"
-        src="./svg/logo-with-name.svg"
-        alt="logo with name upstand fm"
-      />
+      <nav>
+        <img
+          data-cy="logo-with-name"
+          class="logo-with-name"
+          src="./svg/logo-with-name.svg"
+          alt="logo with name upstand fm"
+        />
 
-      <a
-        data-cy="login"
-        class="login button secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://app.upstand.fm"
-      >
-        Login
-      </a>
+        <a
+          data-cy="login"
+          class="button secondary small login"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://app.upstand.fm"
+        >
+          Login
+        </a>
+      </nav>
     </header>
 
     <main>
-      <section id="hero">
-        <div class="center">
-          <h1 data-cy="tagline" id="tagline">
-            Async standups for remote teams.
+      <section id="hero" class="content">
+        <div class="hero-wrapper">
+          <h1 data-cy="tagline" class="tagline">
+            Async standups for<br />
+            remote teams.
           </h1>
 
           <a
@@ -84,7 +87,7 @@
         </div>
       </section>
 
-      <section class="secondary">
+      <section class="content secondary">
         <div class="border-wave-subtle">
           <!--
             The class name "comment" prevents Safari reader view to show the image
@@ -101,7 +104,7 @@
         </div>
 
         <div class="wrapper">
-          <h2>Hi there!</h2>
+          <h2 class="content-header">Hi there!</h2>
 
           <p>
             I&apos;m building Upstand FM because I want to explore if
@@ -119,9 +122,9 @@
         </div>
       </section>
 
-      <section>
+      <section class="content">
         <div class="wrapper">
-          <h3 class="content-header">What does "async" mean?</h3>
+          <h2 class="content-header">What does "async" mean?</h2>
 
           <p>
             It&apos;s short for asynchronous. And in this context it refers to
@@ -141,7 +144,7 @@
             be immediate.
           </p>
 
-          <h3 class="content-header">What&apos;s a standup?</h3>
+          <h2 class="content-header">What&apos;s a standup?</h2>
 
           <p>
             It&apos;s a common ritual among agile/scrum teams. Usually every day
@@ -166,7 +169,7 @@
             >).
           </p>
 
-          <h3 class="content-header">Why are standups useful?</h3>
+          <h2 class="content-header">Why are standups useful?</h2>
 
           <p>
             Because they make the team aware of what everyone is working on, and
@@ -180,7 +183,7 @@
             other, and share/synchronize their understanding of shared goals.
           </p>
 
-          <h3 class="content-header">What&apos;s the problem then?</h3>
+          <h2 class="content-header">What&apos;s the problem then?</h2>
 
           <p>
             The problem is that a fixed time must be picked for the entire team
@@ -211,13 +214,13 @@
             updates, at a time that works best for them?
           </p>
 
-          <h3 class="content-header">How?</h3>
+          <h2 class="content-header">How?</h2>
 
           <p>Stay <b>tuned</b> for updates!</p>
         </div>
       </section>
 
-      <section class="secondary">
+      <section class="content secondary">
         <!--
             The class name "comment" prevents Safari reader view to show the image
 
@@ -249,7 +252,7 @@
 
     <footer id="footer" class="secondary">
       <div class="wrapper">
-        <div class="brand">
+        <div>
           <img data-cy="logo" class="logo" src="./svg/logo.svg" alt="logo" />
         </div>
 
