@@ -233,8 +233,7 @@ li {
   margin-left: auto;
   margin-right: auto;
   margin-top: 4em;
-  border: 1px solid var(--color-lighter-grey);
-  border-radius: 16px;
+  border-radius: 4px;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
   background-color: var(--color-white);
   position: relative;
@@ -258,7 +257,7 @@ li {
 .video-wrapper video {
   display: block;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 4px;
   margin: 0;
   padding: 0;
 }
