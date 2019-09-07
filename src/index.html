@@ -87,8 +87,15 @@
         </div>
 
         <div class="video-wrapper">
-          <video poster="">
-            <source src="" type="video/mp4" />
+          <video
+            preload="auto"
+            autoplay
+            muted
+            loop
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <source src="./video/hello-world.mp4" type="video/mp4" />
 
             <p>
               Sorry, your browser doesn't support HTML5 video :(
