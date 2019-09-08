@@ -204,7 +204,6 @@ li {
 /* Hero */
 
 #hero {
-  /* min-height: 60vh; */
   background: linear-gradient(0deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
 }
 
@@ -213,7 +212,7 @@ li {
   margin: 0 auto;
 }
 
-.tagline {
+#hero .tagline {
   margin: 0.5em 0;
   padding: 0;
   color: var(--color-white);
@@ -223,18 +222,18 @@ li {
 }
 
 @media (max-width: 640px) {
-  .tagline {
+  #hero .tagline {
     font-size: 34px;
   }
 }
 
 .video-wrapper {
-  width: 70%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 4em;
   border-radius: 4px;
-  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.1);
   background-color: var(--color-white);
   position: relative;
   z-index: 1;
@@ -269,6 +268,17 @@ li {
   margin: 0 auto;
 }
 
+.intro,
+.outro {
+  padding: 1em;
+  background-color: var(--color-lightest-grey);
+}
+
+.intro,
+.content {
+  margin-bottom: 2em;
+}
+
 .content {
   padding: 1em;
   background-color: var(--color-white);
@@ -283,55 +293,25 @@ li {
   letter-spacing: 1px;
 }
 
-.secondary {
-  position: relative;
-  background-color: var(--color-lightest-grey);
-}
-
 .overlap {
-  margin-top: -6em;
+  margin-top: -10em;
 }
 
 .spacer {
-  margin: 6em 0;
+  margin: 8em 0;
 }
 
 .center {
   margin: auto;
   text-align: center;
-  padding: 1em 0;
+  padding: 2em 0;
 }
 
-.cta-title {
-  margin: 1em 0 0 0;
+.outro .title {
+  margin: 0;
   font-size: 2em;
   font-weight: normal;
   text-transform: none;
-}
-
-/* Content Borders */
-
-.border-wave-subtle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-61%);
-  width: 100%;
-  z-index: 0;
-}
-
-.border-wave-curve-right {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-80%);
-  width: 100%;
-  z-index: 0;
-}
-
-.border-wave-subtle img,
-.border-wave-curve-right img {
-  width: 100%;
 }
 
 /* Footer */
@@ -340,6 +320,7 @@ li {
   padding: 4em 0;
   border-top: 2px solid var(--color-lighter-grey);
   color: var(--color-grey);
+  background-color: var(--color-lightest-grey);
 }
 
 #footer .wrapper {
