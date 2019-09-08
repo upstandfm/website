@@ -39,7 +39,9 @@
   --color-dark-coral: #dd5f6e;
   --color-coral: #e96d77;
   --color-light-coral: #fb7982;
+  --color-dark-mint: #22d39b;
   --color-mint: #30e8b6;
+  --color-light-mint: #2cf6c3;
 }
 
 *,
@@ -84,7 +86,7 @@ li {
 }
 
 :focus {
-  outline: 3px solid var(--color-mint) !important;
+  outline: 3px solid var(--color-coral) !important;
 }
 
 /* Buttons */
@@ -139,19 +141,19 @@ li {
 }
 
 .button.primary {
-  background-color: var(--color-coral);
-  color: var(--color-white);
-  border-color: var(--color-coral);
+  background-color: var(--color-mint);
+  color: var(--color-darkest-grey);
+  border-color: var(--color-mint);
 }
 
 .button.primary:hover {
-  background-color: var(--color-light-coral);
-  border-color: var(--color-light-coral);
+  background-color: var(--color-light-mint);
+  border-color: var(--color-light-mint);
 }
 
 .button.primary:active {
-  background-color: var(--color-dark-coral);
-  border-color: var(--color-dark-coral);
+  background-color: var(--color-dark-mint);
+  border-color: var(--color-dark-mint);
 }
 
 .button.secondary {
