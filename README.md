@@ -62,7 +62,6 @@ Test files can be found in `/cypress/integration`.
 
 [CircleCI](https://circleci.com/gh/organizations/upstandfm) is used to:
 
-- Audit npm dependencies for security vulnerabilities.
 - Run integration/end-to-end tests (Cypress).
 - Build the website.
 - Deploy the website via [Netlify](https://app.netlify.com):

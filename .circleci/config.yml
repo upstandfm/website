@@ -53,17 +53,6 @@ only_master: &only_master
 
 version: 2.1
 jobs:
-  # Uncomment (also add to "workflows"!) when this issue is fixed:
-  # https://github.com/upstandfm/website/issues/3
-  #
-  # audit:
-  #   <<: *docker_image
-  #   steps:
-  #     - checkout
-  #     - run:
-  #         name: Audit dependencies
-  #         command: npm audit
-
   deps:
     <<: *docker_image
     steps:
@@ -213,52 +202,38 @@ jobs:
 workflows:
   build_branch:
     jobs:
-      # - audit:
-      #     <<: *all_branches_except_master
       - deps:
           <<: *all_branches_except_master
-          # requires:
-          #   - audit
       - e2e:
           requires:
-            # - audit
             - deps
       - build:
           <<: *all_branches_except_master
           requires:
-            # - audit
             - deps
             - e2e
       - preview:
           <<: *all_branches_except_master
           requires:
-            # - audit
             - deps
             - e2e
             - build
 
   release_master:
     jobs:
-      # - audit:
-      #     <<: *only_master
       - deps:
           <<: *only_master
-          # requires:
-          #   - audit
       - e2e-record:
           requires:
-            # - audit
             - deps
       - build:
           <<: *only_master
           requires:
-            # - audit
             - deps
             - e2e-record
       - release:
           <<: *only_master
           requires:
-            # - audit
             - deps
             - e2e-record
             - build
