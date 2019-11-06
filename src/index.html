@@ -48,7 +48,7 @@
   </head>
 
   <body>
-    <header id="header">
+    <header>
       <nav>
         <img
           data-cy="logo-with-name"
@@ -70,7 +70,7 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section id="hero">
         <div class="hero-wrapper">
           <h1 data-cy="tagline" class="hero-tagline">
             Participate in the standup<br />
@@ -89,7 +89,7 @@
       </section>
 
       <section class="content">
-        <div class="wrapper">
+        <div class="content-wrapper">
           <h2 class="content-header">
             Record your update and keep everyone in the loop
           </h2>
@@ -137,8 +137,8 @@
       </section>
 
       <section class="outro">
-        <div class="wrapper center">
-          <h2 class="title">Ready to try it?</h2>
+        <div class="outro-wrapper">
+          <h2 class="outro-title">Ready to try it?</h2>
 
           <a
             data-cy="cta-2"
@@ -151,14 +151,19 @@
       </section>
     </main>
 
-    <footer id="footer">
-      <div class="wrapper">
+    <footer>
+      <div class="footer-wrapper">
         <div>
-          <img data-cy="logo" class="logo" src="./svg/logo.svg" alt="logo" />
+          <img
+            data-cy="logo"
+            class="footer-logo"
+            src="./svg/logo.svg"
+            alt="logo"
+          />
         </div>
 
-        <div class="columns">
-          <div class="column">
+        <div class="footer-columns">
+          <div>
             <a
               data-cy="say-hi"
               target="_blank"
@@ -187,7 +192,7 @@
             </a>
           </div>
 
-          <div class="column">
+          <div>
             <a
               data-cy="github"
               target="_blank"
