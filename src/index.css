@@ -247,18 +247,59 @@ header nav {
 
 .content {
   background: linear-gradient(0deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
-  padding: 1em;
+  padding: 6em 2em;
 }
 
 .content-wrapper {
-  max-width: 75rem;
+  max-width: 100rem;
   margin: auto;
 }
 
 .content-header {
-  margin: 1.5em 0 0 0;
-  text-transform: uppercase;
-  font-size: 24px;
+  margin: 0 0 2em 0;
+  font-size: 38px;
+  line-height: 1.33349;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+@media (max-width: 780px) {
+  .content-header {
+    font-size: 28px;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2em;
+  justify-items: center;
+}
+
+@media (max-width: 380px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  width: 300px;
+  background-color: var(--color-lightest-purple);
+  border-radius: 4px;
+  padding: 1em;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 380px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.card-title {
+  margin: 0;
   line-height: 1.33349;
   font-weight: bold;
   letter-spacing: 1px;
