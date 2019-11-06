@@ -180,7 +180,7 @@ li {
 
 /* Header */
 
-#header {
+header {
   position: fixed;
   width: 100%;
   background-color: var(--color-lightest-grey);
@@ -189,7 +189,7 @@ li {
   z-index: 1;
 }
 
-#header nav {
+header nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
@@ -210,7 +210,7 @@ li {
 
 /* Hero */
 
-.hero {
+#hero {
   padding: 1em;
   height: 60vh;
   display: grid;
@@ -243,20 +243,16 @@ li {
   }
 }
 
-/* Main content */
+/* Content */
 
 .content {
   background: linear-gradient(0deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
   padding: 1em;
 }
 
-.wrapper {
+.content-wrapper {
   max-width: 75rem;
-  margin: 0 auto;
-}
-
-.outro {
-  padding: 1em;
+  margin: auto;
 }
 
 .content-header {
@@ -268,13 +264,19 @@ li {
   letter-spacing: 1px;
 }
 
-.center {
-  margin: auto;
-  text-align: center;
-  padding: 2em 0;
+/* Outro */
+
+.outro {
+  padding: 1em;
 }
 
-.outro .title {
+.outro-wrapper {
+  max-width: 75rem;
+  margin: auto;
+  text-align: center;
+}
+
+.outro-title {
   margin: 0;
   font-size: 2em;
   font-weight: normal;
@@ -283,14 +285,22 @@ li {
 
 /* Footer */
 
-#footer {
+footer {
   padding: 4em 0;
-  border-top: 2px solid var(--color-lighter-grey);
   color: var(--color-grey);
   background-color: var(--color-darkest-purple);
 }
 
-#footer .wrapper {
+footer a,
+footer a:visited {
+  display: block;
+  margin: 0.5em 0;
+  padding: 0;
+  font-weight: normal;
+  color: var(--color-grey);
+}
+
+.footer-wrapper {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 1fr;
@@ -298,11 +308,11 @@ li {
   justify-items: center;
 }
 
-#footer .logo {
+.footer-logo {
   width: 40px;
 }
 
-#footer .columns {
+.footer-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
@@ -311,20 +321,11 @@ li {
 }
 
 @media (max-width: 550px) {
-  #footer .columns {
+  .footer-columns {
     grid-template-columns: 1fr;
     grid-gap: 0;
     text-align: center;
   }
-}
-
-#footer a,
-#footer a:visited {
-  display: block;
-  margin: 0.5em 0;
-  padding: 0;
-  font-weight: normal;
-  color: var(--color-grey);
 }
 
 .copyright {
