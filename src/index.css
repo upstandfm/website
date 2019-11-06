@@ -143,31 +143,31 @@ li {
 }
 
 .button.primary {
-  background-color: var(--color-mint);
-  color: var(--color-darkest-grey);
-  border-color: var(--color-mint);
+  background-color: var(--color-coral);
+  color: var(--color-lightest-grey);
+  border-color: var(--color-coral);
 }
 
 .button.primary:hover {
-  background-color: var(--color-light-mint);
-  border-color: var(--color-light-mint);
+  background-color: var(--color-light-coral);
+  border-color: var(--color-light-coral);
 }
 
 .button.primary:active {
-  background-color: var(--color-dark-mint);
-  border-color: var(--color-dark-mint);
+  background-color: var(--color-dark-coral);
+  border-color: var(--color-dark-coral);
 }
 
 .button.secondary {
   background-color: transparent;
-  color: var(--color-white);
-  border-color: var(--color-white);
+  color: var(--color-darkest-purple);
+  border-color: transparent;
 }
 
 .button.secondary:hover {
-  background-color: var(--color-white);
-  border-color: var(--color-white);
-  color: var(--color-dark-grey);
+  /* background-color: var(--color-white); */
+  /* border-color: var(--color-white); */
+  color: var(--color-dark-purple);
 }
 
 .button.secondary:active {
@@ -183,7 +183,6 @@ li {
 
 #header {
   padding: 16px;
-  background-color: var(--color-dark-purple);
 }
 
 #header nav {
@@ -207,19 +206,21 @@ li {
 
 /* Hero */
 
-#hero {
-  background: linear-gradient(0deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
+.intro {
+  padding: 1em;
+  height: 60vh;
+  display: grid;
 }
 
 .hero-wrapper {
   text-align: center;
-  margin: 0 auto;
+  margin: auto;
 }
 
-#hero .tagline {
-  margin: 0.5em 0;
+.tagline {
+  margin: -1em 0 1em 0;
   padding: 0;
-  color: var(--color-white);
+  color: var(--color-darkest-purple);
   letter-spacing: 1px;
   font-size: 54px;
   font-weight: normal;
@@ -227,26 +228,25 @@ li {
 }
 
 @media (max-width: 640px) {
-  #hero .tagline {
+  .tagline {
     font-size: 34px;
   }
 }
 
 /* Main content */
 
+.content {
+  background: linear-gradient(0deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
+  padding: 1em;
+}
+
 .wrapper {
   max-width: 75rem;
   margin: 0 auto;
 }
 
-.intro,
 .outro {
   padding: 1em;
-}
-
-.content {
-  padding: 1em;
-  background-color: var(--color-white);
 }
 
 .content-header {
@@ -277,7 +277,7 @@ li {
   padding: 4em 0;
   border-top: 2px solid var(--color-lighter-grey);
   color: var(--color-grey);
-  background-color: var(--color-lightest-grey);
+  background-color: var(--color-darkest-purple);
 }
 
 #footer .wrapper {
