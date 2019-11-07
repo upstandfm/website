@@ -93,10 +93,9 @@ li {
 
 /* Buttons */
 
-.button,
-.button:active,
-.button:visited {
-  font-size: 17px;
+.button {
+  font-size: 21px;
+  font-weight: normal;
   line-height: 1.23543;
   white-space: nowrap;
   text-decoration: none;
@@ -105,28 +104,17 @@ li {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  padding: 8px 56px;
-  border: 2px solid;
-  border-radius: 33px;
+  padding: 0.5em 2em;
+  border: 2px solid var(--color-darkest-purple);
+  box-shadow: 6px 6px 0 0 var(--color-darkest-purple);
+  color: var(--color-darkest-purple);
   position: relative;
-  transition: all 0.2s ease;
+  transition: all 0.1s linear;
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 580px) {
   .button {
-    padding: 8px 46px;
-  }
-}
-
-@media (max-width: 550px) {
-  .button {
-    padding: 8px 36px;
-  }
-}
-
-@media (max-width: 300px) {
-  .button {
-    padding: 8px 26px;
+    font-size: 17px;
   }
 }
 
@@ -143,35 +131,32 @@ li {
 
 .button.primary {
   background-color: var(--color-coral);
-  color: var(--color-lightest-grey);
-  border-color: var(--color-coral);
 }
 
 .button.primary:hover {
   background-color: var(--color-light-coral);
-  border-color: var(--color-light-coral);
-}
-
-.button.primary:active {
-  background-color: var(--color-dark-coral);
-  border-color: var(--color-dark-coral);
+  box-shadow: 8px 8px 0 0 var(--color-darkest-purple);
 }
 
 .button.secondary {
-  background-color: transparent;
-  color: var(--color-darkest-purple);
-  border-color: transparent;
+  background-color: var(--color-lighter-purple);
 }
 
 .button.secondary:hover {
-  /* background-color: var(--color-white); */
-  /* border-color: var(--color-white); */
-  color: var(--color-dark-purple);
+  background-color: var(--color-lightest-purple);
+  box-shadow: 8px 8px 0 0 var(--color-darkest-purple);
 }
 
-.button.secondary:active {
-  background-color: var(--color-light-grey);
-  border-color: var(--color-light-grey);
+.button.tertiary {
+  background-color: transparent;
+  color: var(--color-darkest-purple);
+  border-color: transparent;
+  box-shadow: none;
+  font-weight: bold;
+}
+
+.button.tertiary:hover {
+  color: var(--color-dark-purple);
 }
 
 .button.vertical-space {
