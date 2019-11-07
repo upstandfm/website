@@ -247,7 +247,7 @@ header nav {
 
 .content {
   background: linear-gradient(180deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
-  padding: 4em 2em;
+  padding: 6em 2em;
 }
 
 .content-wrapper {
@@ -310,18 +310,18 @@ header nav {
 /* Outro */
 
 .outro {
-  padding: 1em;
+  height: 60vh;
+  display: grid;
 }
 
 .outro-wrapper {
-  max-width: 75rem;
   margin: auto;
   text-align: center;
 }
 
 .outro-title {
   margin: 0;
-  font-size: 2em;
+  font-size: 44px;
   font-weight: normal;
   text-transform: none;
 }
