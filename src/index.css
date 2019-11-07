@@ -63,30 +63,6 @@ body {
   background-color: var(--color-lightest-grey);
 }
 
-a,
-a:visited {
-  color: var(--color-purple);
-  font-weight: bold;
-  outline: 0;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-p {
-  color: var(--color-dark-grey);
-}
-
-ul,
-ol {
-  padding: 0 0 0 2.5em;
-}
-
-li {
-  line-height: 1.75;
-}
-
 :focus {
   outline: 0;
   box-shadow: 0px 0px 0px 3px var(--color-light-coral);
@@ -236,7 +212,7 @@ header nav {
 .content {
   background: var(--color-purple);
   transform: skewY(-2deg);
-  padding: 6em 2em;
+  padding: 4em 2em;
 }
 
 .content-wrapper {
@@ -318,7 +294,7 @@ header nav {
 /* Footer */
 
 footer {
-  padding: 4em 0;
+  padding: 2em 0;
   color: var(--color-grey);
   background-color: var(--color-darkest-purple);
 }
@@ -329,7 +305,11 @@ footer a:visited {
   margin: 0.5em 0;
   padding: 0;
   font-weight: normal;
-  color: var(--color-grey);
+  color: var(--color-light-grey);
+}
+
+footer a:hover {
+  text-decoration: none;
 }
 
 .footer-wrapper {
