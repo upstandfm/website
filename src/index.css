@@ -232,13 +232,15 @@ header nav {
 /* Content */
 
 .content {
-  background: linear-gradient(180deg, #dd5f6e 0%, #5e3da8 57%, #8052dc 100%);
+  background: var(--color-purple);
+  transform: skewY(-2deg);
   padding: 6em 2em;
 }
 
 .content-wrapper {
   max-width: 100rem;
   margin: auto;
+  transform: skewY(2deg);
 }
 
 .content-header {
@@ -294,9 +296,9 @@ header nav {
 /* Outro */
 
 .outro {
-  height: 50vh;
+  height: 60vh;
   display: grid;
-  padding: 2em;
+  padding: 1em;
 }
 
 .outro-wrapper {
