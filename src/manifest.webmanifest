@@ -1,7 +1,7 @@
 {
   "name": "Website",
   "short_name": "Website",
-  "description": "Upstand FM - Async standups for remote teams.",
+  "description": "Upstand FM - Turn your standup into a podcast.",
   "icons": [
     {
       "src": "./img/favicon.ico",
