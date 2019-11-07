@@ -231,7 +231,7 @@ header nav {
 /* Content */
 
 .content {
-  background: linear-gradient(180deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
+  background: linear-gradient(180deg, #dd5f6e 0%, #5e3da8 57%, #8052dc 100%);
   padding: 6em 2em;
 }
 
@@ -272,11 +272,9 @@ header nav {
 .card {
   width: 300px;
   padding: 1em;
-  color: var(--color-white);
-}
-
-.card p {
-  color: var(--color-white);
+  border: 2px solid var(--color-darkest-purple);
+  background-color: var(--color-lightest-purple);
+  box-shadow: 6px 6px 0 0 var(--color-darkest-purple);
 }
 
 @media (max-width: 380px) {
@@ -295,8 +293,9 @@ header nav {
 /* Outro */
 
 .outro {
-  height: 60vh;
+  height: 50vh;
   display: grid;
+  padding: 2em;
 }
 
 .outro-wrapper {
