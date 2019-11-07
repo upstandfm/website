@@ -246,8 +246,8 @@ header nav {
 /* Content */
 
 .content {
-  background: linear-gradient(0deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
-  padding: 6em 2em;
+  background: linear-gradient(180deg, #dd5f6e 0%, #5e3da8 57%, #4a308d 100%);
+  padding: 4em 2em;
 }
 
 .content-wrapper {
@@ -286,10 +286,12 @@ header nav {
 
 .card {
   width: 300px;
-  background-color: var(--color-lightest-purple);
-  border-radius: 4px;
   padding: 1em;
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  color: var(--color-white);
+}
+
+.card p {
+  color: var(--color-white);
 }
 
 @media (max-width: 380px) {
