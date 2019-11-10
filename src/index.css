@@ -270,6 +270,34 @@ header nav {
   letter-spacing: 1px;
 }
 
+.marker {
+  display: inline-block;
+  transform: rotate(-1deg);
+  padding: 4px;
+  border-radius: 3px;
+}
+
+.blue {
+  background-color: #bcecff;
+}
+
+.yellow {
+  background-color: #fbf09a;
+}
+
+.green {
+  background-color: #affcd1;
+}
+
+.pink {
+  background-color: #ffb8d3;
+}
+
+.marker-wrapper {
+  display: inline-block;
+  transform: rotate(1deg);
+}
+
 /* Outro */
 
 .outro {
