@@ -255,7 +255,6 @@ header nav {
   padding: 1em;
   border: 2px solid var(--color-darkest-purple);
   background-color: var(--color-lightest-grey);
-  box-shadow: 6px 6px 0 0 var(--color-darkest-purple);
 }
 
 @media (max-width: 380px) {
