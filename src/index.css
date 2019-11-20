@@ -27,11 +27,12 @@
   --color-lightest-purple: #ede6fb;
 
   /* Neutral */
-  --color-darkest-grey: #353140;
+  --color-darkest-grey: #2b2837;
+  --color-darker-grey: #393545;
   --color-dark-grey: #403b4d;
   --color-grey: #746d86;
   --color-light-grey: #d3d1d9;
-  --color-lighter-grey: #edebf2;
+  --color-lighter-grey: #f4f3f8;
   --color-lightest-grey: #fbf8ff;
   --color-white: #ffffff;
 
@@ -44,6 +45,8 @@
   --color-dark-mint: #22d39b;
   --color-mint: #30e8b6;
   --color-light-mint: #2cf6c3;
+
+  --radius-size: 4px;
 }
 
 *,
@@ -72,7 +75,7 @@ body {
 
 .button {
   font-size: 21px;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.23543;
   white-space: nowrap;
   text-decoration: none;
@@ -83,6 +86,7 @@ body {
   margin: 0;
   padding: 0.5em 2em;
   border: 2px solid var(--color-darkest-purple);
+  border-radius: var(--radius-size);
   box-shadow: 6px 6px 0 0 var(--color-darkest-purple);
   color: var(--color-darkest-purple);
   position: relative;
@@ -133,7 +137,7 @@ body {
 }
 
 .button.tertiary:hover {
-  color: var(--color-dark-purple);
+  color: var(--color-light-purple);
 }
 
 .button.vertical-space {
@@ -253,8 +257,8 @@ header nav {
 .card {
   width: 300px;
   padding: 1em;
-  border: 2px solid var(--color-darkest-purple);
   background-color: var(--color-lightest-grey);
+  border-radius: var(--radius-size);
 }
 
 @media (max-width: 380px) {
