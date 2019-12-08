@@ -84,7 +84,7 @@ body {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  padding: 0.5em 2em;
+  padding: 12px 28px;
   border: 2px solid var(--color-darkest-purple);
   border-radius: var(--radius-size);
   box-shadow: 6px 6px 0 0 var(--color-darkest-purple);
