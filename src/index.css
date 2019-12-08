@@ -64,6 +64,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-darkest-grey);
+}
+
+main {
   background-color: var(--color-lightest-grey);
 }
 
