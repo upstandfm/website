@@ -77,9 +77,8 @@ main {
 /* Buttons */
 
 .button {
-  font-size: 21px;
+  font-size: 19px;
   font-weight: bold;
-  line-height: 1.23543;
   white-space: nowrap;
   text-decoration: none;
   text-transform: none;
@@ -87,11 +86,11 @@ main {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  padding: 12px 28px;
-  border: 2px solid var(--color-darkest-purple);
+  padding: 14px 38px;
+  border: none;
   border-radius: var(--radius-size);
-  box-shadow: 6px 6px 0 0 var(--color-darkest-purple);
-  color: var(--color-darkest-purple);
+  box-shadow: 0 4px 6px rgba(25, 18, 56, 0.14), 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: var(--color-white);
   position: relative;
   transition: all 0.1s linear;
 }
@@ -104,6 +103,7 @@ main {
 
 .button:hover {
   cursor: pointer;
+  transform: perspective(1000px) translateZ(50px);
 }
 
 .button.small {
@@ -114,21 +114,13 @@ main {
 }
 
 .button.primary {
-  background-color: var(--color-lighter-coral);
-}
-
-.button.primary:hover {
-  background-color: var(--color-lightest-coral);
-  box-shadow: 8px 8px 0 0 var(--color-darkest-purple);
+  background-color: var(--color-coral);
+  text-shadow: 0 1px 3px rgba(221, 95, 110, 0.4);
 }
 
 .button.secondary {
-  background-color: var(--color-lighter-purple);
-}
-
-.button.secondary:hover {
-  background-color: var(--color-lightest-purple);
-  box-shadow: 8px 8px 0 0 var(--color-darkest-purple);
+  background-color: var(--color-purple);
+  text-shadow: 0 1px 3px rgba(25, 18, 56, 0.4);
 }
 
 .button.tertiary {
@@ -141,6 +133,7 @@ main {
 
 .button.tertiary:hover {
   color: var(--color-light-purple);
+  transform: none;
 }
 
 .button.vertical-space {
