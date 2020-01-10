@@ -114,7 +114,7 @@ main {
 }
 
 .button.primary {
-  background-color: var(--color-coral);
+  background-color: var(--color-light-coral);
   text-shadow: 0 1px 3px rgba(221, 95, 110, 0.4);
 }
 
