@@ -64,9 +64,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-darkest-grey);
-}
-
-main {
   background-color: var(--color-lightest-grey);
 }
 
@@ -106,7 +103,7 @@ main {
 }
 
 .button.small {
-  font-size: 13px;
+  font-size: 15px;
   padding: 8px 20px;
   border-radius: 4px;
 }
@@ -319,7 +316,7 @@ header nav {
 
 footer {
   padding: 2em 0;
-  background-color: var(--color-darkest-purple);
+  border-top: 2px solid var(--color-light-grey);
 }
 
 footer a,
@@ -328,7 +325,7 @@ footer a:visited {
   margin: 0.5em 0;
   padding: 0;
   font-weight: normal;
-  color: var(--color-lightest-purple);
+  color: var(--color-dark-grey);
 }
 
 footer a:hover {
@@ -365,5 +362,5 @@ footer a:hover {
 
 .copyright {
   font-size: 0.8em;
-  color: var(--color-lightest-purple);
+  color: var(--color-grey);
 }
