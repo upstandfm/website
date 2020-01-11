@@ -31,7 +31,7 @@
   --color-darker-grey: #393545;
   --color-dark-grey: #403b4d;
   --color-grey: #746d86;
-  --color-light-grey: #d3d1d9;
+  --color-light-grey: #eceaf1;
   --color-lighter-grey: #f4f3f8;
   --color-lightest-grey: #fbf8ff;
   --color-white: #ffffff;
@@ -103,24 +103,20 @@ main {
 
 .button:hover {
   cursor: pointer;
-  transform: perspective(1000px) translateZ(50px);
 }
 
 .button.small {
   font-size: 13px;
-  line-height: 1.30775;
   padding: 8px 20px;
   border-radius: 4px;
 }
 
 .button.primary {
-  background-color: var(--color-light-coral);
-  text-shadow: 0 1px 3px rgba(221, 95, 110, 0.4);
-}
-
-.button.secondary {
-  background-color: var(--color-purple);
+  background-color: var(--color-light-purple);
   text-shadow: 0 1px 3px rgba(25, 18, 56, 0.4);
+}
+.button.primary:hover {
+  background-color: var(--color-purple);
 }
 
 .button.tertiary {
