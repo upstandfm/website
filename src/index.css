@@ -205,7 +205,7 @@ header nav {
 /* Content */
 
 .content {
-  background: var(--color-purple);
+  background: var(--color-lightest-purple);
   transform: skewY(-2deg);
   padding: 4em 2em;
 }
@@ -223,7 +223,7 @@ header nav {
   font-weight: normal;
   letter-spacing: 1px;
   text-align: center;
-  color: var(--color-white);
+  color: var(--color-dark-purple);
 }
 
 @media (max-width: 780px) {
