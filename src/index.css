@@ -316,8 +316,7 @@ header nav {
 
 footer {
   padding: 2em 0;
-  border-top: 1px solid var(--color-light-grey);
-  background-color: var(--color-white);
+  border-top: 2px solid var(--color-light-grey);
 }
 
 footer a,
