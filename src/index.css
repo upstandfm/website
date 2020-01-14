@@ -124,11 +124,10 @@ p {
   color: var(--color-darkest-purple);
   border-color: transparent;
   box-shadow: none;
-  font-weight: bold;
 }
 
 .button.tertiary:hover {
-  color: var(--color-light-purple);
+  background-color: var(--color-lightest-purple);
 }
 
 .button.vertical-space {
