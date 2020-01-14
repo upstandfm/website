@@ -109,11 +109,10 @@ body {
 }
 
 .button.primary {
-  background-color: var(--color-light-purple);
-  text-shadow: 0 1px 3px rgba(25, 18, 56, 0.4);
+  background-color: var(--color-darkest-purple);
 }
 .button.primary:hover {
-  background-color: var(--color-purple);
+  background-color: var(--color-darker-purple);
 }
 
 .button.tertiary {
