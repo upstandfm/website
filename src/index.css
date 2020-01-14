@@ -219,7 +219,6 @@ header nav {
   font-weight: normal;
   letter-spacing: 1px;
   text-align: center;
-  color: var(--color-dark-purple);
 }
 
 @media (max-width: 780px) {
