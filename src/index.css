@@ -67,6 +67,10 @@ body {
   background-color: var(--color-lightest-grey);
 }
 
+p {
+  color: var(--color-dark-grey);
+}
+
 :focus {
   outline: 3px solid var(--color-mint);
 }
@@ -125,7 +129,6 @@ body {
 
 .button.tertiary:hover {
   color: var(--color-light-purple);
-  transform: none;
 }
 
 .button.vertical-space {
