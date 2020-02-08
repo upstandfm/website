@@ -29,8 +29,8 @@
   /* Neutral */
   --color-darkest-grey: #2b2837;
   --color-darker-grey: #393545;
-  --color-dark-grey: #403b4d;
-  --color-grey: #746d86;
+  --color-dark-grey: #4b4657;
+  --color-grey: #968fa7;
   --color-light-grey: #eceaf1;
   --color-lighter-grey: #f4f3f8;
   --color-lightest-grey: #fbf8ff;
@@ -46,6 +46,7 @@
   --color-mint: #30e8b6;
   --color-light-mint: #2cf6c3;
 
+  /* Misc */
   --radius-size: 4px;
 }
 
