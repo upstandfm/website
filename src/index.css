@@ -299,6 +299,7 @@ header nav {
 /* Content */
 .content-header {
   margin: 0 0 1em 0;
+  padding: 0 1em;
   font-size: 38px;
   line-height: 1.33349;
   font-weight: normal;
