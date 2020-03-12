@@ -32,15 +32,15 @@
   "homepage": "https://www.upstand.fm",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^3.8.1",
-    "cypress-watch-and-reload": "^1.2.13",
+    "cypress": "^3.8.3",
+    "cypress-watch-and-reload": "^1.2.14",
     "eslint": "^6.8.0",
-    "eslint-plugin-cypress": "^2.8.1",
-    "husky": "^4.0.3",
-    "lint-staged": "^9.5.0",
-    "netlify-cli": "^2.27.0",
+    "eslint-plugin-cypress": "^2.10.3",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "netlify-cli": "^2.38.0",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.2"
   }
 }
