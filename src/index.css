@@ -397,9 +397,11 @@ header nav {
 /* Outro */
 
 .outro {
-  height: 60vh;
+  height: 40vh;
   display: grid;
   padding: 1em;
+  margin-top: 10em;
+  background-color: var(--color-lightest-purple);
 }
 
 .outro-wrapper {
@@ -407,11 +409,9 @@ header nav {
   text-align: center;
 }
 
-.outro-title {
-  margin: 0;
-  font-size: 44px;
-  font-weight: normal;
-  text-transform: none;
+.outro-wrapper p {
+  font-size: 1.2em;
+  margin: -1em 0 1em 0;
 }
 
 /* Footer */
