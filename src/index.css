@@ -210,6 +210,7 @@ header nav {
 #preview-wrapper {
   max-width: 1024px;
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-size);
@@ -217,6 +218,7 @@ header nav {
 
 #preview-wrapper img {
   border-radius: var(--radius-size);
+  width: 100%;
 }
 
 /* Why */
@@ -386,6 +388,7 @@ header nav {
 .step-img-wrapper {
   max-width: 390px;
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-size);
@@ -393,6 +396,7 @@ header nav {
 
 .step-img-wrapper img {
   border-radius: var(--radius-size);
+  width: 100%;
 }
 
 /* Outro */
