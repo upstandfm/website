@@ -7,13 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "rimraf .cache dev && parcel src/index.html --out-dir dev",
     "build": "parcel build src/index.html --out-dir build",
-    "cy": "cypress open"
+    "cy": "cypress open",
+    "format": "prettier --single-quote --write"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css,md,html}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "src/**/*.{js,json,css,md,html}": "npm run format"
   },
   "husky": {
     "hooks": {
