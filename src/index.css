@@ -135,6 +135,10 @@ p {
   margin: 1em 0;
 }
 
+.special {
+  color: var(--color-coral);
+}
+
 /* Header */
 
 header {
@@ -187,6 +191,10 @@ header nav {
   font-size: 54px;
   font-weight: normal;
   line-height: 1.05;
+}
+
+.hero-sub-text {
+  font-size: 0.8em;
 }
 
 @media (max-width: 780px) {
