@@ -402,11 +402,11 @@ header nav {
 /* Outro */
 
 .outro {
-  height: 40vh;
+  height: 30vh;
   display: grid;
   padding: 1em;
   margin-top: 10em;
-  background-color: var(--color-lightest-purple);
+  background-color: var(--color-lightest-grey);
 }
 
 .outro-wrapper {
@@ -423,6 +423,8 @@ header nav {
 
 footer {
   padding: 2em 0;
+  background-color: var(--color-lightest-grey);
+  border-top: 1px solid var(--color-light-grey);
 }
 
 footer a,
