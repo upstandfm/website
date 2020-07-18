@@ -12,7 +12,7 @@ describe('Landing page', () => {
   it('shows login', () => {
     cy.get('[data-cy="login"]')
       .hasText('Login')
-      .should('have.attr', 'href', 'https://app.upstand.fm')
+      .should('have.attr', 'href', 'https://upstand-fm-app.netlify.app')
       .should('have.attr', 'target', '_blank')
       .should('have.attr', 'rel', 'noopener noreferrer');
   });
@@ -22,20 +22,13 @@ describe('Landing page', () => {
   });
 
   it('shows call to action buttons', () => {
-    cy.get('[data-cy="cta-1"]')
-      .hasText('Get Access')
-      .should('have.attr', 'href', 'mailto:hi@upstand.fm?subject=Early access');
-    cy.get('[data-cy="cta-2"]')
-      .hasText('Get Access')
-      .should('have.attr', 'href', 'mailto:hi@upstand.fm?subject=Early access');
+    cy.get('[data-cy="cta-1"]').hasText('Get Access');
+    cy.get('[data-cy="cta-2"]').hasText('Get Access');
   });
 
   it('shows footer with logo, links and copyright', () => {
     cy.get('[data-cy="logo"]').should('exist');
 
-    cy.get('[data-cy="say-hi"]')
-      .hasText('Say hi!')
-      .should('have.attr', 'href', 'mailto:hi@upstand.fm?subject=Hi there!');
     cy.get('[data-cy="about"]')
       .hasText('About')
       .should('have.attr', 'href', 'https://danillouz.dev')
@@ -53,7 +46,7 @@ describe('Landing page', () => {
       .should('have.attr', 'rel', 'noopener noreferrer');
     cy.get('[data-cy="storybook"]')
       .hasText('Storybook')
-      .should('have.attr', 'href', 'https://storybook.upstand.fm')
+      .should('have.attr', 'href', 'https://upstand-fm-storybook.netlify.app')
       .should('have.attr', 'target', '_blank')
       .should('have.attr', 'rel', 'noopener noreferrer');
     cy.get('[data-cy="twitter"]')
